@@ -1,0 +1,196 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* ### Primary */
+
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+
+    /* ### Neutral */
+
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    color: var(--grayish-blue);
+    background-color: var(--very-light-gray);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 30px;
+}
+
+/* HEADERS */
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 34px;
+    font-weight: 200;
+    color: var(--very-dark-blue);
+}
+
+header h2 {
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--very-dark-blue);
+}
+
+header p {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+/* MAIN GRID */
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    margin-top: 60px;
+}
+
+.box {
+    background-color: white;
+    border-radius: 7px;
+    padding: 30px;
+    text-align: right;
+    box-shadow: 0px 7px 18px rgba(100, 160, 190, 0.3);
+}
+
+.box-text {
+    text-align: left;
+    padding-bottom: 50px;
+}
+
+.box1 {
+    border-top: 4px solid var(--cyan);
+}
+
+.box2 {
+    border-top: 4px solid var(--red);
+}
+
+.box3 {
+    border-top: 4px solid var(--orange);
+}
+
+.box4 {
+    border-top: 4px solid var(--blue);
+}
+
+.box-text h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--very-dark-blue);
+    margin-bottom: 10px;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.box1, .box4 {
+    align-self: center;
+}
+
+/* EFFECTS */
+
+@keyframes fadeInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Move element 50px up */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Move element to its original position */
+    }
+}
+
+header, .main {
+    opacity: 0; /* Initially set opacity to 0 */
+    animation: fadeInFromTop 1.5s ease forwards; /* Apply animation */
+}
+
+
+.box1, .box2, .box3, .box4 {
+    transition: transform 0.3s ease-in-out; /* Add ease-in-out transition to transform property */
+}
+
+.box1:hover, .box2:hover, .box3:hover, .box4:hover {
+    transform: scale(1.05); /* Subtle zoom effect */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.box1:hover .box-text h3 {
+    color: var(--cyan); /* Change h3 color to match border-top color */
+}
+
+.box2:hover .box-text h3 {
+    color: var(--red); /* Change h3 color to match border-top color */
+}
+
+.box3:hover .box-text h3 {
+    color: var(--orange); /* Change h3 color to match border-top color */
+}
+
+.box4:hover .box-text h3 {
+    color: var(--blue); /* Change h3 color to match border-top color */
+}
+
+.attribution a:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+.attribution {
+    font-size: 15px;
+    text-align: center;
+    color: var(--very-dark-blue);
+}
+
+.attribution a {
+    color: var(--grayish-blue);
+}
+
+@media only screen and (max-width: 768px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+    
+    header h2 {
+        font-size: 24px;
+    }
+
+    .box-text {
+        font-size: 14px;
+    }
+
+    .attribution {
+        font-size: 12px;
+    }
+}
