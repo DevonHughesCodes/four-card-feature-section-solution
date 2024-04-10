@@ -117,43 +117,43 @@ header p {
 @keyframes fadeInFromTop {
     0% {
         opacity: 0;
-        transform: translateY(-50px); /* Move element 50px up */
+        transform: translateY(-50px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0); /* Move element to its original position */
+        transform: translateY(0);
     }
 }
 
 header, .main {
-    opacity: 0; /* Initially set opacity to 0 */
-    animation: fadeInFromTop 1.5s ease forwards; /* Apply animation */
+    opacity: 0;
+    animation: fadeInFromTop 1.5s ease forwards; 
 }
 
 
 .box1, .box2, .box3, .box4 {
-    transition: transform 0.3s ease-in-out; /* Add ease-in-out transition to transform property */
+    transition: transform 0.3s ease-in-out; 
 }
 
 .box1:hover, .box2:hover, .box3:hover, .box4:hover {
-    transform: scale(1.05); /* Subtle zoom effect */
-    cursor: pointer; /* Change cursor to pointer */
+    transform: scale(1.05); 
+    cursor: pointer; 
 }
 
 .box1:hover .box-text h3 {
-    color: var(--cyan); /* Change h3 color to match border-top color */
+    color: var(--cyan); 
 }
 
 .box2:hover .box-text h3 {
-    color: var(--red); /* Change h3 color to match border-top color */
+    color: var(--red); 
 }
 
 .box3:hover .box-text h3 {
-    color: var(--orange); /* Change h3 color to match border-top color */
+    color: var(--orange); 
 }
 
 .box4:hover .box-text h3 {
-    color: var(--blue); /* Change h3 color to match border-top color */
+    color: var(--blue);
 }
 
 .attribution a:hover {
